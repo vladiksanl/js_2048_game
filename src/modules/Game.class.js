@@ -42,7 +42,7 @@ export default class Game {
   }
 
   moveLeft() {
-    const oldBoard = [...this.board];
+    const oldBoard = JSON.parse(JSON.stringify(this.board));
 
     this.board.forEach((array, index) => {
       let newArray = [...array].filter((e) => {
@@ -77,7 +77,7 @@ export default class Game {
     this.render();
   }
   moveRight() {
-    const oldBoard = [...this.board];
+    const oldBoard = JSON.parse(JSON.stringify(this.board));
 
     this.board.forEach((array, index) => {
       let newArray = this.board[index].filter((element) => element !== 0);
